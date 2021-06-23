@@ -19,4 +19,13 @@
             android:textColor="@color/white"
     />
 
+    <com.example.ap2_3.views.Joystick
+            android:layout_width="700px"
+            android:layout_height="700px"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+    />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
