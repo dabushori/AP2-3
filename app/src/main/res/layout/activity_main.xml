@@ -17,7 +17,7 @@
         android:layout_height="match_parent"
         tools:context=".views.MainActivity"
         android:layout_gravity="right"
-        android:background="@color/black">
+        android:background="@color/background">
 
     <SeekBar
             android:id="@+id/sbThrottle"
@@ -33,6 +33,8 @@
             app:layout_constraintTop_toTopOf="parent"
             android:progress="@={vm.throttle}"
             android:layout_marginRight="320dp"
+            android:progressDrawable="@color/main"
+            android:thumbTint="@color/black"
             android:max="1000"
             android:progressTint="@color/main"
             android:progressBackgroundTint="@color/black"
@@ -115,6 +117,13 @@
             app:layout_constraintHorizontal_bias="0.865"
             android:progress="@={vm.rudder}"
             android:max="1000"
+            android:thumbTint="@color/black"
+
+            android:progressTint="@color/black"
+            android:progressBackgroundTint="@color/black"
+            android:background="@color/main"
+
+            android:indeterminate="false"
             />
 
 
