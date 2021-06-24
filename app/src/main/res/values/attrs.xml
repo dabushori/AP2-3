@@ -2,8 +2,10 @@
 <resources>
     <declare-styleable name="Joystick">
         <!-- attributes go here -->
-        <attr name="x" format="float" />
-        <attr name="y" format="float" />
+        <attr name="f_x" format="float" />
+        <attr name="x" format="string" />
+        <attr name="f_y" format="float" />
+        <attr name="y" format="string" />
         <attr name="color" format="color" />
     </declare-styleable>
 </resources>
