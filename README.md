@@ -33,5 +33,6 @@ Our project is built like a MVVM structure: (view, viewmodel, model)
 * Link to the web - https://github.com/dabushori/AP2-3
 ***
 ## Sixth Part - Video
-Link to the [video](https://youtu.be/oOZcvc1GBxU)
+* Link to the [video](https://youtu.be/oOZcvc1GBxU)
+* Link to the project [class diagram (UML)](https://github.com/dabushori/AP2-3/blob/master/UML.pdf)
 ***
