@@ -72,7 +72,7 @@ public class FlightControlViewModel extends BaseObservable {
 //            this.aileron = Float.parseFloat(aileron);
             this.x = aileron;
             notifyPropertyChanged(BR.x);
-            System.out.println("aileron set to " + this.x);
+//            System.out.println("aileron set to " + this.x);
             model.setAileron(this.x);
 
         } catch (Exception e) {
@@ -85,7 +85,7 @@ public class FlightControlViewModel extends BaseObservable {
 //            this.elevator = Float.parseFloat(elevator);
             this.y = elevator;
             notifyPropertyChanged(BR.y);
-            System.out.println("elevator set to " + -1 * this.y);
+//            System.out.println("elevator set to " + -1 * this.y);
             model.setElevator(-1 * this.y);
         } catch (Exception e) {
             return;
@@ -96,7 +96,7 @@ public class FlightControlViewModel extends BaseObservable {
         if (rudder != this.rudder) {
             try {
                 this.rudder = rudder;
-                System.out.println("notifying rudder changed to " + (((float) this.rudder) / 500 - 1));
+//                System.out.println("notifying rudder changed to " + (((float) this.rudder) / 500 - 1));
                 model.setRudder(((float) this.rudder) / 500 - 1);
                 notifyPropertyChanged(BR.rudder);
             } catch (Exception e) {
@@ -109,7 +109,7 @@ public class FlightControlViewModel extends BaseObservable {
         if (throttle != this.throttle) {
             try {
                 this.throttle = throttle;
-                System.out.println("notifying throttle changed to " + (1 - ((float) this.throttle) / 1000));
+//                System.out.println("notifying throttle changed to " + (1 - ((float) this.throttle) / 1000));
                 model.setThrottle(1 - ((float) this.throttle) / 1000);
                 notifyPropertyChanged(BR.throttle);
             } catch (Exception e) {
@@ -172,14 +172,14 @@ public class FlightControlViewModel extends BaseObservable {
 
     @BindingAdapter("app:x")
     public static void setX(Joystick j, float x) {
-        System.out.println("Setting x to " + x);
+//        System.out.println("Setting x to " + x);
         j.setX(x);
 //        setX(x);
     }
 
     @BindingAdapter("app:y")
     public static void setY(Joystick j, float y) {
-        System.out.println("Setting y to " + y);
+//        System.out.println("Setting y to " + y);
         j.setY(y);
 //        setY(y);
     }

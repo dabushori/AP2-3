@@ -25,7 +25,7 @@ Our project is built like a MVVM structure: (view, viewmodel, model)
 2. Start fightGear and click on setting. In the bottom paste:
 > --telnet=socket,in,10,127.0.0.1,6400,tcp
 3. Open the project app that you downloaded and pen the project
-4. Download a virtual phone device or connect your phone to the app.
+4. Download a virtual phone device or connect your phone to the app (notice that the device's language must be English).
 5. Click on Start (with a green arrow) and start running the project!
 ***
 ## Fifth Part

@@ -19,35 +19,36 @@ public class FlightControlModel implements Model {
     private boolean connected;
     private BlockingQueue<Data> changes;
 
+    private static Thread currThread;
+
     public FlightControlModel(String ip, int port) {
-        Socket fg;
-        PrintWriter out;
+        if (currThread != null && currThread.isAlive()) {
+            currThread.interrupt();
+        }
         this.connected = true;
         this.changes = new LinkedBlockingQueue<Data>();
-        try {
-            fg = new Socket(ip,port);
-            out = new PrintWriter(fg.getOutputStream(),true);
-            if (out != null && fg != null) {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        while(connected) {
-                            try {
-                                Data data = changes.remove();
-                                out.print(data.type + data.value + "\r\n");
-                                out.flush();
-                            }   catch (Exception e) {
-
-                            }
-                        }
+//        System.out.println("connecting to ip " + ip + " and port " + port);
+        currThread = new Thread(() -> {
+            try {
+                Socket fg = new Socket(ip, port);
+                PrintWriter out = new PrintWriter(fg.getOutputStream(), true);
+                while (connected) {
+                    try {
+                        Data data = changes.take();
+//                        System.out.print(data.type + data.value + "\r\n");
+                        out.print(data.type + data.value + "\r\n");
+                        out.flush();
+                    } catch (Exception e) {
+                        System.out.println("sending failed");
                     }
-                }).start();
+                }
+                out.close();
+                fg.close();
+            } catch (Exception e) {
+                System.out.println("connection failed");
             }
-            out.close();
-            fg.close();
-        } catch (Exception e) {
-            System.out.println("connection failed");
-        }
+        });
+        currThread.start();
     }
 
     public void disconnect() {
@@ -75,7 +76,7 @@ public class FlightControlModel implements Model {
     @Override
     public void setRudder(float val) {
         try {
-            changes.add(new Data("set /controls/flight/rudder ",val));
+            changes.add(new Data("set /controls/flight/rudder ", val));
         } catch (Exception e) {
             System.out.println("Could not set Rudder" + val);
         }
