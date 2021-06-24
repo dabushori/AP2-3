@@ -10,7 +10,7 @@
 ***
 ## Second Part - Documentation of the files of the project
 Our project is built like a MVVM structure: (view, viewmodel, model)
-* View – responsible for all the things shown on the screen. In the activity_main.xml file we define the activity itself (all the views that will appear on the screen). In the view model there is also the joystick (in Joystick.java file). The joystick is being used in the main activity.
+* View – responsible for all the things shown on the screen. In the activity_main.xml file we define the activity itself (all the views that will appear on the screen). In the view module there is also the joystick (in Joystick.java file). The joystick is being used in the main activity.
 * The View Model - it is responsible for 2 things: 
   * The first thing is the data binding – the view model has a property for each data piece that we need to send to the flight gear simulator. Those properties are binded to the views that appear in the main activity (the view), and the are updating when the user changes the views (joystick and seekbars). We do it using BindingAdapter, InverseBindingAdapter and Bindable methods.
   * The second thing is to pass the data to the model when it is being changed.
@@ -33,5 +33,5 @@ Our project is built like a MVVM structure: (view, viewmodel, model)
 * Link to the web - https://github.com/dabushori/AP2-3
 ***
 ## Sixth Part - Video
-Link to the video -
+Link to the [video](https://youtu.be/oOZcvc1GBxU)
 ***
