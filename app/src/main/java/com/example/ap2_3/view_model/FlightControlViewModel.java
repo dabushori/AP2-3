@@ -18,7 +18,9 @@ public class FlightControlViewModel extends BaseObservable {
     private int port;
 
     public FlightControlViewModel() {
-        throttle = 1000; // starting value
+        // starting values
+        throttle = 1000;
+        rudder = 500;
     }
 
     public FlightControlViewModel(Model m) {

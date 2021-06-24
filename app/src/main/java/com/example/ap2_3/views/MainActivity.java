@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ((SeekBar) findViewById(R.id.sbThrottle)).setProgress(1000);
+                ((SeekBar) findViewById(R.id.rudderBar)).setProgress(500);
                 vm.connect();
             }
         });

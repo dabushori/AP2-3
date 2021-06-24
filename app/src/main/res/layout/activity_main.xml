@@ -34,6 +34,8 @@
             android:progress="@={vm.throttle}"
             android:layout_marginRight="320dp"
             android:max="1000"
+            android:progressTint="@color/main"
+            android:progressBackgroundTint="@color/black"
             />
 
     <EditText

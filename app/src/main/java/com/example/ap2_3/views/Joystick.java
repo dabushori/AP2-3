@@ -84,40 +84,6 @@ public class Joystick extends View {
         return y;
     }
 
-//    @InverseBindingAdapter(attribute = "app:x", event = "xAttrChanged")
-//    public static float getX(Joystick j) {
-//        return j.getX();
-//    }
-//
-//    @InverseBindingAdapter(attribute = "app:y", event = "yAttrChanged")
-//    public static float getY(Joystick j) {
-//        return j.getY();
-//    }
-//
-//    @BindingAdapter("app:x")
-//    public static void setX(Joystick j, float x) {
-//        j.setX(x);
-//    }
-//
-//    @BindingAdapter("app:y")
-//    public static void setY(Joystick j, float y) {
-//        j.setY(y);
-//    }
-//
-//    @BindingAdapter("app:xAttrChanged")
-//    public static void bindXAttrChanged(Joystick j, InverseBindingListener l) {
-//        l.onChange();
-//    }
-//
-//    @BindingAdapter("app:yAttrChanged")
-//    public static void bindYAttrChanged(Joystick j, InverseBindingListener l) {
-//        l.onChange();
-//    }
-
-    boolean isInRange(float x, float y) {
-        return x <= 1 && x >= -1 && y <= 1 && y >= -1;
-    }
-
     boolean enabled = false;
 
     @Override
