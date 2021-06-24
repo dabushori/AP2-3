@@ -10,11 +10,11 @@
 ***
 ## Second Part - Documentation of the files of the project
 Our project is built like a MVVM structure: (view, viewmodel, model)
-* We have a view (MainActivity) that is responsible for all the things shown on the screen and the databinding with the viewModel when we change something on the screen.
-    * We have a joystick class that is used in the MainActivity.
-* We have a viewmodel (FlightControlViewModel) that is responsible of sending the data to the model to be dealt with and to data bind with the view.
-* We have a model (FlightControlModel) that is responsible of connecting to the flight gear server and of sending the data that it got from the viewmodel to the server.
-    * All the sending is being done with a thread that is waiting for data to be arriving from the viewmodel (using active object design pattern).
+* View – responsible for all the things shown on the screen. In the activity_main.xml file we define the activity itself (all the views that will appear on the screen). In the view module there is also the joystick (in Joystick.java file). The joystick is being used in the main activity.
+* The View Model - it is responsible for 2 things: 
+  * The first thing is the data binding – the view model has a property for each data piece that we need to send to the flight gear simulator. Those properties are binded to the views that appear in the main activity (the view), and the are updating when the user changes the views (joystick and seekbars). We do it using BindingAdapter, InverseBindingAdapter and Bindable methods.
+  * The second thing is to pass the data to the model when it is being changed.
+* The Model - The model is the part which talks with the flight gear server. He does that on a different thread. This is done using the active object design pattern – the model has a BlockingQueue which contains the data that needs to be sent. The new thread removes an element from the queue (using the take method – which blocks until the queue is not empty). Every time the view model updates the model, a new data piece is inserted to the queue.
 ***
 ## Third Part - Installations required
 * Download [Intellij](https://www.jetbrains.com/idea/download/#section=windows) or [AndroidStudio](https://developer.android.com/studio?gclid=Cj0KCQjw2tCGBhCLARIsABJGmZ6H7VdKBoKCjh4YNUIOmFTsVzwXn4LSmeVoHufmu7aaTdfqPwKaqLcaAlv3EALw_wcB&gclsrc=aw.ds#downloads) (for the Project)
@@ -25,7 +25,7 @@ Our project is built like a MVVM structure: (view, viewmodel, model)
 2. Start fightGear and click on setting. In the bottom paste:
 > --telnet=socket,in,10,127.0.0.1,6400,tcp
 3. Open the project app that you downloaded and pen the project
-4. Download a virtual phone device or connect your phone to the app.
+4. Download a virtual phone device or connect your phone to the app (notice that the device's language must be English).
 5. Click on Start (with a green arrow) and start running the project!
 ***
 ## Fifth Part
@@ -33,5 +33,6 @@ Our project is built like a MVVM structure: (view, viewmodel, model)
 * Link to the web - https://github.com/dabushori/AP2-3
 ***
 ## Sixth Part - Video
-Link to the video -
+* Link to the [video](https://youtu.be/oOZcvc1GBxU)
+* Link to the project [class diagram (UML)](https://github.com/dabushori/AP2-3/blob/master/UML.pdf)
 ***

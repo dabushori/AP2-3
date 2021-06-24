@@ -12,121 +12,141 @@
             type="com.example.ap2_3.views.MainActivity"/>
 </data>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".views.MainActivity"
-        android:layout_gravity="right"
-        android:background="@color/background">
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".views.MainActivity"
+            android:layout_gravity="right"
+            android:background="@color/background">
 
-    <SeekBar
-            android:id="@+id/sbThrottle"
-            style="@android:style/Widget.DeviceDefault.SeekBar"
-            android:layout_width="500dp"
-            android:layout_height="419dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginEnd="310dp"
-            android:rotation="90"
-            android:scrollY="200dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:progress="@={vm.throttle}"
-            android:layout_marginRight="320dp"
-            android:progressDrawable="@color/main"
-            android:thumbTint="@color/black"
-            android:max="1000"
-            android:progressTint="@color/main"
-            android:progressBackgroundTint="@color/black"
-            />
+        <SeekBar
+                android:id="@+id/sbThrottle"
+                style="@android:style/Widget.DeviceDefault.SeekBar"
+                android:layout_width="500dp"
+                android:layout_height="419dp"
+                android:layout_marginTop="100dp"
 
-    <EditText
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_width="300px"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:ems="10"
-            android:hint="IP Address"
-            android:textColorHint="@color/white"
-            android:background="@color/main"
-            android:textColor="@color/white"
-            android:textAlignment="center"
-            android:id="@+id/ip"
-            android:layout_marginTop="12dp"
-            android:layout_marginLeft="24dp"
-            android:gravity="center_horizontal"
-            android:text="@={vm.ip}"
-            />
+                android:rotation="90"
+                android:scrollY="200dp"
 
-    <EditText
-            android:textColorHint="@color/white"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_width="300px"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:hint="Port"
-            app:layout_goneMarginTop="10px"
-            android:background="@color/main"
-            android:textColor="@color/white"
-            android:layout_marginRight="148dp"
-            android:textAlignment="center"
-            android:id="@+id/port"
-            android:text="@={vm.port}"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="12dp"
-            />
+                app:layout_constraintTop_toTopOf="@id/guideline2"
+                app:layout_constraintRight_toLeftOf="@id/guideline"
+                android:progress="@={vm.throttle}"
 
-    <Button
-            android:layout_height="40dp"
-            android:layout_width="wrap_content"
-            android:text="Connect"
-            android:id="@+id/connectBtn"
-            app:layout_goneMarginTop="5px"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.878"
-            android:layout_marginTop="4dp"
-            />
+                android:progressDrawable="@color/main"
+                android:thumbTint="@color/black"
+                android:max="1000"
+                android:progressTint="@color/main"
+                android:progressBackgroundTint="@color/black"
+                />
 
-    <com.example.ap2_3.views.Joystick
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="132dp"
-            android:id="@+id/joystick"
-            android:layout_width="299dp"
-            android:layout_height="436dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginLeft="100dp"
-            app:x="@={vm.x}"
-            app:y="@={vm.y}"
-            />
+        <EditText
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:hint="IP Address"
+                android:textColorHint="@color/white"
+                android:background="@color/main"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:id="@+id/ip"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:text="@={vm.ip}"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
 
-    <SeekBar
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/joystick"
-            android:id="@+id/rudderBar"
-            android:outlineAmbientShadowColor="@color/white"
-            android:outlineSpotShadowColor="@color/white"
-            android:layout_width="292dp"
-            android:layout_height="32dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintHorizontal_bias="0.865"
-            android:progress="@={vm.rudder}"
-            android:max="1000"
-            android:thumbTint="@color/black"
+        <EditText
+                android:textColorHint="@color/white"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:hint="Port"
+                android:layout_marginTop="15px"
+                android:background="@color/main"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:id="@+id/port"
+                android:text="@={vm.port}"
+                android:gravity="center_horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ip"/>
 
-            android:progressTint="@color/black"
-            android:progressBackgroundTint="@color/black"
-            android:background="@color/main"
+        <Button
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:text="Connect"
+                android:id="@+id/connectBtn"
+                app:layout_goneMarginTop="15px"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHorizontal_bias="0.463"
+                app:layout_constraintTop_toBottomOf="@+id/port"/>
 
-            android:indeterminate="false"
-            />
+        <com.example.ap2_3.views.Joystick
+                app:layout_constraintTop_toTopOf="@+id/guideline2"
+                android:id="@+id/joystick"
+                android:layout_height="0dp"
+                app:layout_constraintLeft_toLeftOf="@id/guideline"
+                app:x="@={vm.x}"
+                app:y="@={vm.y}"
+                android:layout_width="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/guideline3"
+                app:layout_constraintStart_toStartOf="@+id/guideline"/>
+
+        <SeekBar
+                app:layout_constraintLeft_toLeftOf="@id/guideline"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/joystick"
+                android:id="@+id/rudderBar"
+                android:outlineAmbientShadowColor="@color/white"
+                android:outlineSpotShadowColor="@color/white"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:progress="@={vm.rudder}"
+                android:max="1000"
+                android:thumbTint="@color/black"
+
+                android:progressTint="@color/black"
+                android:progressBackgroundTint="@color/black"
+                android:background="@color/main"
+
+                android:indeterminate="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.203"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"/>
+
+        <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/guideline"
+                app:layout_constraintGuide_percent="0.3"
+                android:orientation="vertical"/>
+
+        <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/guideline2"
+                app:layout_constraintGuide_percent="0.15"
+                android:orientation="horizontal"/>
+
+        <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/guideline3"
+                app:layout_constraintGuide_begin="570dp"
+                android:orientation="horizontal"/>
 
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
